@@ -5,27 +5,29 @@ A lightweight Node.js backend demonstrating how to implement Web Push Notificati
 ---
 ## Table of Contents
 
-1. [What Are Push Notifications?](#what-are-push-notifications)
-2. [How Push Notifications Work](#how-push-notifications-work)
-   - [Service Workers](#service-workers)
-   - [Push Subscriptions](#push-subscriptions)
-   - [VAPID Authentication](#vapid-authentication)
-   - [Payload Encryption](#payload-encryption)
-3. [Use Cases](#use-cases)
-4. [About This Project](#about-this-project)
-   - [Features](#features)
-   - [Prerequisites](#prerequisites)
-   - [Installation & Setup](#installation--setup)
-   - [Configuration](#configuration)
-   - [Project Structure](#project-structure)
-   - [API Endpoints](#api-endpoints)
-5. [Detailed Component Overview](#detailed-component-overview)
-   - [Models](#models)
-   - [Controllers](#controllers)
-   - [Services](#services)
-   - [WebPush Configuration](#webpush-configuration)
-6. [Future Improvements](#future-improvements)
-7. [License](#license)
+- [Push Notification Backend](#push-notification-backend)
+  - [Table of Contents](#table-of-contents)
+  - [What Are Push Notifications?](#what-are-push-notifications)
+  - [How Push Notifications Work](#how-push-notifications-work)
+    - [Service Workers](#service-workers)
+    - [Push Subscriptions](#push-subscriptions)
+    - [VAPID Authentication](#vapid-authentication)
+    - [Payload Encryption](#payload-encryption)
+  - [Use Cases](#use-cases)
+  - [About This Project](#about-this-project)
+    - [Features](#features)
+    - [Prerequisites](#prerequisites)
+    - [Installation \& Setup](#installation--setup)
+    - [Configuration](#configuration)
+    - [Project Structure](#project-structure)
+    - [API Endpoints](#api-endpoints)
+  - [Detailed Component Overview](#detailed-component-overview)
+    - [Models](#models)
+    - [Controllers](#controllers)
+    - [Services](#services)
+    - [WebPush Configuration](#webpush-configuration)
+  - [Future Improvements](#future-improvements)
+  - [License](#license)
 
 ---
 
@@ -131,15 +133,20 @@ A fully functional backend to manage push subscriptions and send notifications. 
    ```bash
    npx web-push generate-vapid-keys
    ```
-4. **Create `.env` file** at project root:
+4. **Create `.env` file** at project root and take `.env.example` as reference and put your own values:
    ```env
-   PORT=3000
+   PORT=<YOUR_PORT>
    VAPID_PUBLIC_KEY=<YOUR_PUBLIC_KEY>
    VAPID_PRIVATE_KEY=<YOUR_PRIVATE_KEY>
    ```
 5. **Run the server:**
    ```bash
    node app.js
+   ```
+6. If you wanna run the tests, create `.env.test` in the test directory and take `.env.test.example` as reference and put your own values as you did in the `.env`.
+7. Run all tests:
+   ```bash
+   npm test
    ```
 
 ### Configuration
