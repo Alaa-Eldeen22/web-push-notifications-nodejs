@@ -3,16 +3,30 @@ const webpush = require('./webpush.service');
 
 // Save a new push subscription in the database
 exports.subscribe = async (subscription) => {
-	await Subscription.create({
-		endpoint: subscription.endpoint,
-		p256dh: subscription.keys.p256dh,
-		auth: subscription.keys.auth,
-	});
+	const subscriptionRecord = await Subscription.findOne({ where: { endpoint: subscription.endpoint } });
+
+	if (!subscriptionRecord){
+		await Subscription.create({
+			endpoint: subscription.endpoint,
+			p256dh: subscription.keys.p256dh,
+			auth: subscription.keys.auth,
+		});
+		return true;
+	}
+
+	return false;
 };
 
 // Remove a subscription based on the endpoint
 exports.unsubscribe = async (endpoint) => {
-	await Subscription.destroy({ where: { endpoint } });
+	const subscription = await Subscription.findOne({ where: { endpoint } });
+
+	if (subscription) {
+		await subscription.destroy();
+		return true;
+	}
+
+	return false;
 };
 
 // Send a push notification to all saved subscriptions

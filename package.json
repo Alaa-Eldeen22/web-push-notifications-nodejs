@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +16,9 @@
     "sequelize": "^6.37.7",
     "sqlite3": "^5.1.7",
     "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0"
   }
 }
