@@ -27,7 +27,6 @@ A lightweight Node.js backend demonstrating how to implement Web Push Notificati
     - [Services](#services)
     - [WebPush Configuration](#webpush-configuration)
   - [Future Improvements](#future-improvements)
-  - [License](#license)
 
 ---
 
@@ -214,9 +213,3 @@ README.md                        # This documentation
 - **Retry Logic:** Exponential backoff for temporary failures.
 - **Unit Tests:** Add Jest or Mocha tests for controllers and services.
 - **Frontend Integration:** Provide example client and service worker.
-
----
-
-## License
-
-MIT © Your Name
